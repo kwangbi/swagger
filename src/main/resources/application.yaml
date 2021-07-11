@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: swagger
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+springdoc:
+  version: '@project.version@'
+  api-docs:
+    path: api-docs
+  swagger-ui:
+    path: index.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  paths-to-match:
+    - /posts/**
